@@ -6,24 +6,33 @@ It's an experiment to check wether the architecture is feasible.
 
 The service will be responsible for reading data from the queue, saving it to the database and then publishing the updates to the client apps
 
-## Info
-
-Until now this was directly taken from the rabbitmq docs:
-
-> https://www.rabbitmq.com/tutorials/tutorial-one-go.html
-
-## Running the project
+## Running the project (In construction)
 
 After downloading this repo, you can do the following:
 
 1. Start the queue using the docker-compose.yml file:
 
-    `docker compose up`
+        docker compose up
 
-2. Start the receiver:
+This will start up the queue and the database with default configs
 
-    `go run receive.go`
+2. Copy the file ``.env.example`` and rename it to ``.env`` and put the same configs you set up on the docker-compose.yml file
 
-3. Start the sender:
+3. Execute
 
-    `go run send.go`
+        go run main.go
+
+*** 
+## Info - The configs below refer to first version
+
+Until now this was directly taken from the rabbitmq docs:
+
+> https://www.rabbitmq.com/tutorials/tutorial-one-go.html
+
+Start the receiver:
+
+    go run receive.go
+
+Start the sender:
+
+    go run send.go

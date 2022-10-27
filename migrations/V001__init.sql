@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS todos;
+
+DROP TABLE IF EXISTS changelists;
+
+CREATE TABLE todos (
+	id SERIAL PRIMARY KEY,
+	text VARCHAR NOT NULL,
+	is_done BOOLEAN NOT NULL,
+	created_on TIMESTAMP NOT NULL
+);
+
+CREATE TABLE changelists (
+	id BIGSERIAL PRIMARY KEY,
+	model_id SERIAL NOT NULL,
+	version INTEGER NOT NULL,
+	is_delete BOOLEAN NOT NULL,
+	created_on TIMESTAMP NOT NULL
+);

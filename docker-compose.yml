@@ -7,3 +7,13 @@ services:
     ports:
       - "5672:5672" # rabbit port
       - "15672:15672" # rabbit administrative port
+
+  postgres:
+    image: postgres:15.0-bullseye
+    container_name: todo-sync-backend-database
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      
